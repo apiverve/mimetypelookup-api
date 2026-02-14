@@ -15,8 +15,7 @@ const api = new mimetypelookupAPI({
 
 // Example query
 var query = {
-  extension: "pdf",
-  mimetype: "application/pdf"
+  extension: "pdf"
 };
 
 // Make the API request using callback
