@@ -17,14 +17,11 @@ def call_mimetypelookup_api():
     Make a GET request to the MIME Type Lookup API
     """
     try:
-        # Query parameters
-        params &#x3D; {&#x27;extension&#x27;: &#x27;pdf&#x27;, &#x27;mimetype&#x27;: &#x27;application/pdf&#x27;}
-
         headers = {
             'x-api-key': API_KEY
         }
 
-        response = requests.get(API_URL, headers=headers, params=params)
+        response = requests.get(API_URL, headers=headers)
 
         # Raise exception for HTTP errors
         response.raise_for_status()
