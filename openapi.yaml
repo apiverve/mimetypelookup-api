@@ -1,39 +1,35 @@
 openapi: 3.0.4
 info:
   title: MIME Type Lookup
-  description: MIME Type Lookup is a tool for looking up MIME types by file extension or finding file extensions by MIME type. It covers all common file types including documents, images, video, audio, and archives.
+  description: >-
+    MIME Type Lookup is a tool for looking up MIME types by file extension or
+    finding file extensions by MIME type. It covers all common file types
+    including documents, images, video, audio, and archives.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/mimetypelookup:
     get:
-      summary: Lookup MIME Type
-      description: MIME Type Lookup is a tool for looking up MIME types by file extension or finding file extensions by MIME type. It covers all common file types including documents, images, video, audio, and archives.
+      summary: Lookup by Extension
+      description: Look up MIME type by file extension
       operationId: mimetypelookup
       parameters:
-      - name: extension
-        in: query
-        schema:
-          type: string
-        required: false
-        description: File extension to lookup (provide either extension or mimetype)
-        example: pdf
-      - name: mimetype
-        in: query
-        schema:
-          type: string
-        required: false
-        description: MIME type to lookup (provide either extension or mimetype)
-        example: application/pdf
+        - name: extension
+          in: query
+          schema:
+            type: string
+          required: true
+          description: File extension to lookup (without the leading dot)
+          example: pdf
       responses:
         '200':
           description: Successful Response
@@ -49,11 +45,11 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   extension: pdf
                   mime_type: application/pdf
@@ -64,7 +60,7 @@ paths:
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
 components:
   securitySchemes:
     api_key:
@@ -72,4 +68,4 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
