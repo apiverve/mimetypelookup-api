@@ -11,17 +11,9 @@ namespace APIVerve.API.MIMETypeLookup
     public class MIMETypeLookupQueryOptions
     {
         /// <summary>
-        /// File extension to lookup (provide either extension or mimetype)
-        /// Example: pdf
+        /// File extension to lookup (without the leading dot)
         /// </summary>
         [JsonProperty("extension")]
         public string Extension { get; set; }
-
-        /// <summary>
-        /// MIME type to lookup (provide either extension or mimetype)
-        /// Example: application/pdf
-        /// </summary>
-        [JsonProperty("mimetype")]
-        public string Mimetype { get; set; }
     }
 }
