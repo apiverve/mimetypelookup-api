@@ -219,8 +219,9 @@ from apiverve_mimetypelookup.apiClient import MimetypelookupAPIClient
 
 api = MimetypelookupAPIClient("[YOUR_API_KEY]")
 
+query = { "extension": "pdf" }
+
 try:
-    query = { "extension": "pdf" }
     result = api.execute(query)
     print(result)
 finally:
