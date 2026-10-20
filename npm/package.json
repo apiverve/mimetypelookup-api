@@ -1,7 +1,7 @@
 {
   "name": "@apiverve/mimetypelookup",
-  "version": "1.2.0",
-  "description": "MIME Type Lookup is a tool for looking up MIME types by file extension or finding file extensions by MIME type. It covers all common file types including documents, images, video, audio, and archives.",
+  "version": "1.2.2",
+  "description": "MIME Type Lookup matches file extensions to MIME types, categories, and default character encodings, or returns matching extensions for any media type. Paid plans add gzip compressibility flags.",
   "main": "index.js",
   "types": "index.d.ts",
   "sideEffects": false,
@@ -23,7 +23,7 @@
     "directory": "npm"
   },
   "keywords": [
-    "mime type", "content type", "file extension", "media type", "mime lookup"
+    "mime type lookup api", "file extension lookup", "mime type for json", "json mime type", "mime type"
   ],
   "author": {
     "name": "APIVerve",
@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/apiverve/mimetypelookup-api/issues"
   },
-  "homepage": "https://apiverve.com/marketplace/mimetypelookup?utm_source=npm&utm_medium=homepage",
+  "homepage": "https://apiverve.com/marketplace/mimetypelookup?utm_source=npm&utm_medium=referral&utm_content=homepage",
   "devDependencies": {
     "mocha": "^11.0.1",
     "chai": "^5.1.2",
