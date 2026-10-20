@@ -2,9 +2,9 @@ openapi: 3.0.4
 info:
   title: MIME Type Lookup
   description: >-
-    MIME Type Lookup is a tool for looking up MIME types by file extension or
-    finding file extensions by MIME type. It covers all common file types
-    including documents, images, video, audio, and archives.
+    MIME Type Lookup matches file extensions to MIME types, categories, and
+    default character encodings, or returns matching extensions for any media
+    type. Paid plans add gzip compressibility flags.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -19,7 +19,7 @@ servers:
 paths:
   /v1/mimetypelookup:
     get:
-      summary: Lookup by Extension
+      summary: MIME Type Lookup
       description: Look up MIME type by file extension
       operationId: mimetypelookup
       parameters:
