@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/mimetypelookup",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "MIME Type Lookup matches file extensions to MIME types, categories, and default character encodings, or returns matching extensions for any media type. Paid plans add gzip compressibility flags.",
   "main": "index.js",
   "types": "index.d.ts",
