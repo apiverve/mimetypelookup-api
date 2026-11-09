@@ -1,6 +1,6 @@
 # MIME Type Lookup API - Ruby Gem
 
-MIME Type Lookup matches file extensions to MIME types, categories, and default character encodings, or returns matching extensions for any media type. Paid plans add gzip compressibility flags.
+MIME Type Lookup matches file extensions to MIME types, categories, and default character encodings, or returns matching extensions for any media type. Paid plans add gzip compressibility flags, the registry that defines each type (IANA, Apache or nginx), and every extension sharing that type.
 
 ## Installation
 
@@ -73,10 +73,22 @@ client = APIVerve::Mimetypelookup::Client.new(
   "status": "ok",
   "error": null,
   "data": {
-    "extension": "pdf",
-    "mime_type": "application/pdf",
-    "category": "document",
-    "description": "PDF document"
+    "count": 1,
+    "results": [
+      {
+        "extension": "jpg",
+        "mimeType": "image/jpeg",
+        "category": "image",
+        "charset": null,
+        "compressible": false,
+        "source": "iana",
+        "extensions": [
+          "jpg",
+          "jpeg",
+          "jpe"
+        ]
+      }
+    ]
   }
 }
 ```
