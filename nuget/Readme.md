@@ -1,7 +1,7 @@
 MIME Type Lookup API
 ============
 
-MIME Type Lookup matches file extensions to MIME types, categories, and default character encodings, or returns matching extensions for any media type. Paid plans add gzip compressibility flags.
+MIME Type Lookup matches file extensions to MIME types, categories, and default character encodings, or returns matching extensions for any media type. Paid plans add gzip compressibility flags, the registry that defines each type (IANA, Apache or nginx), and every extension sharing that type.
 
 
 [![NuGet version](https://img.shields.io/nuget/v/APIVerve.API.MIMETypeLookup.svg)](https://www.nuget.org/packages/APIVerve.API.MIMETypeLookup)
@@ -366,10 +366,22 @@ using (var apiClient = new MIMETypeLookupAPIClient("[YOUR_API_KEY]"))
   "status": "ok",
   "error": null,
   "data": {
-    "extension": "pdf",
-    "mime_type": "application/pdf",
-    "category": "document",
-    "description": "PDF document"
+    "count": 1,
+    "results": [
+      {
+        "extension": "jpg",
+        "mimeType": "image/jpeg",
+        "category": "image",
+        "charset": null,
+        "compressible": false,
+        "source": "iana",
+        "extensions": [
+          "jpg",
+          "jpeg",
+          "jpe"
+        ]
+      }
+    ]
   }
 }
 ```

@@ -32,17 +32,35 @@ namespace APIVerve.API.MIMETypeLookup
 
     public partial class Data
     {
+        [JsonProperty("count")]
+        public long? Count { get; set; }
+
+        [JsonProperty("results")]
+        public Result[] Results { get; set; }
+    }
+
+    public partial class Result
+    {
         [JsonProperty("extension")]
         public string Extension { get; set; }
 
-        [JsonProperty("mime_type")]
+        [JsonProperty("mimeType")]
         public string MimeType { get; set; }
 
         [JsonProperty("category")]
         public string Category { get; set; }
 
-        [JsonProperty("description")]
-        public string Description { get; set; }
+        [JsonProperty("charset")]
+        public object Charset { get; set; }
+
+        [JsonProperty("compressible")]
+        public bool? Compressible { get; set; }
+
+        [JsonProperty("source")]
+        public string Source { get; set; }
+
+        [JsonProperty("extensions")]
+        public string[] Extensions { get; set; }
     }
 
     public partial class Premium
