@@ -25,10 +25,18 @@ declare module '@apiverve/mimetypelookup' {
 
 
   interface MIMETypeLookupData {
-      extension:   null | string;
-      mimeType:    null | string;
-      category:    null | string;
-      description: null | string;
+      count:   number | null;
+      results: Result[];
+  }
+  
+  interface Result {
+      extension:    null | string;
+      mimeType:     null | string;
+      category:     null | string;
+      charset:      null;
+      compressible: boolean | null;
+      source:       null | string;
+      extensions:   (null | string)[];
   }
 
   export default class mimetypelookupWrapper {
