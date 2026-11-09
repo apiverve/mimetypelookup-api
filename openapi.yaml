@@ -4,7 +4,8 @@ info:
   description: >-
     MIME Type Lookup matches file extensions to MIME types, categories, and
     default character encodings, or returns matching extensions for any media
-    type. Paid plans add gzip compressibility flags.
+    type. Paid plans add gzip compressibility flags, the registry that defines
+    each type (IANA, Apache or nginx), and every extension sharing that type.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
@@ -20,7 +21,9 @@ paths:
   /v1/mimetypelookup:
     get:
       summary: MIME Type Lookup
-      description: Look up MIME type by file extension
+      description: >-
+        Look up the MIME type by file extension, with its defining source and
+        every extension sharing it on paid plans
       operationId: mimetypelookup
       parameters:
         - name: extension
@@ -51,10 +54,18 @@ paths:
                 status: ok
                 error: null
                 data:
-                  extension: pdf
-                  mime_type: application/pdf
-                  category: document
-                  description: PDF document
+                  count: 1
+                  results:
+                    - extension: jpg
+                      mimeType: image/jpeg
+                      category: image
+                      charset: null
+                      compressible: false
+                      source: iana
+                      extensions:
+                        - jpg
+                        - jpeg
+                        - jpe
         '401':
           description: Your request was not authorized, or your API Key was invalid
         '404':

@@ -1,6 +1,6 @@
 # [MIME Type Lookup API](https://apiverve.com/marketplace/mimetypelookup?utm_source&#x3D;github&amp;utm_medium&#x3D;referral&amp;utm_content&#x3D;readme)
 
-MIME Type Lookup matches file extensions to MIME types, categories, and default character encodings, or returns matching extensions for any media type. Paid plans add gzip compressibility flags.
+MIME Type Lookup matches file extensions to MIME types, categories, and default character encodings, or returns matching extensions for any media type. Paid plans add gzip compressibility flags, the registry that defines each type (IANA, Apache or nginx), and every extension sharing that type.
 
 The MIME Type Lookup API provides a simple, reliable way to integrate mime type lookup functionality into your applications. Built for developers who need production-ready mime type lookup capabilities without the complexity of building from scratch.
 
@@ -211,10 +211,22 @@ A real response from the MIME Type Lookup API:
   "status": "ok",
   "error": null,
   "data": {
-    "extension": "pdf",
-    "mime_type": "application/pdf",
-    "category": "document",
-    "description": "PDF document"
+    "count": 1,
+    "results": [
+      {
+        "extension": "jpg",
+        "mimeType": "image/jpeg",
+        "category": "image",
+        "charset": null,
+        "compressible": false,
+        "source": "iana",
+        "extensions": [
+          "jpg",
+          "jpeg",
+          "jpe"
+        ]
+      }
+    ]
   }
 }
 ```
