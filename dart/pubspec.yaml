@@ -1,6 +1,6 @@
 name: apiverve_mimetypelookup
 description: "MIME Type Lookup matches file extensions to MIME types, categories, and default character encodings, or returns matching extensions for any media type. Paid plans add gzip compressibility flags, the registry that defines each type (IANA, Apache or nginx), and every extension sharing that type."
-version: 1.2.5
+version: 1.2.6
 homepage: https://apiverve.com/marketplace/mimetypelookup?utm_source=dart&utm_medium=referral&utm_content=homepage
 repository: https://github.com/apiverve/mimetypelookup-api/tree/main/dart
 
